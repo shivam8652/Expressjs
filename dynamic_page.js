@@ -12,8 +12,20 @@ app.get("",(_,res)=>{
 });
 
 app.get("/profile",(_,res)=>{
-    const user = {name:"shivam rai",email:"raishivam223@gmail.com",city:"mumbai"};
+    const user = {
+        name:"shivam rai",
+        email:"raishivam223@gmail.com",
+        city:"mumbai",
+        skills:['php','js','c++','java','node']
+    
+    };
     res.render('profile',{user});
+});
+
+app.get("/login",(_,res)=>{
+
+   res.render("login");
+
 });
 
 app.get("/about",(_,res)=>{
