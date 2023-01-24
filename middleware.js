@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const route = express.Router();
 
 const reqFilter = (req,res,next)=>{
 
@@ -18,7 +19,8 @@ else{
 
 }
 
-app.use(reqFilter)
+//app.use(reqFilter)
+route.use(reqFilter);
 
 app.get("/",(req,res)=>{
 
@@ -30,5 +32,16 @@ app.get("/users",(req,res)=>{
     res.send("Welcome to the user page");
 });
 
+route.get("/about",(req,res)=>{
+
+    res.send("Welcome to the about page");
+});
+
+route.get("/contact",(req,res)=>{
+
+    res.send("Welcome to the contact page");
+});
+
+app.use("/",route);
 
 app.listen(5000);
