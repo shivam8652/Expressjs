@@ -36,7 +36,6 @@ app.put('/:id',(req,res)=>{
 app.delete('/:id',(req,res)=>{
    const id = req.params.id;
    conn.query("Delete from user where id =" + req.params.id,(result)=>{
-   
     res.end(result);
    });
 });
